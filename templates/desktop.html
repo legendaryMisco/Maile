@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>MailEnable Web Mail</title>
+    <link rel="stylesheet" href="{% static 'styles/decktop.css' %}">
+    <link rel="shortcut icon" href="{% static 'images/login_logo.ico' %}" type="image/x-icon">
+  </head>
+  <body>
+    <div class="main__container">
+      <div class="container">
+        <div>
+            <img src="{% static 'images/login_logo.ico' %}" alt="logo.ico" class="logo_ico" >
+        </div>
+    
+
+        <div class="form__container">
+          <form  method='post'>
+            {% csrf_token %}
+            <p class="head__text">Sign In</p>
+            <hr>
+            <div class="input1">
+              <input type="text" placeholder="User name" class="input" name='username' required>
+            </div>
+
+            <div class="input1">
+              <input type="text" placeholder="Password" class="input" name='password' required>
+            </div>
+
+             <p class="error_msg" style="color: red;margin-bottom: 1em; font-size: 13px;" >
+                {{err_msg|linebreaksbr}}
+            </p>
+
+            <div class="check">
+              <input type="checkbox" class="check" >
+
+              <p class="p__tag">Remember my setting for this computer</p>
+            </div>
+
+            <div class="btn">
+              <button type="submit" class="btns btn1"> Login</button>
+              <button disabled="disabled" class="btns btn2"> Reset</button>
+            </div>
+
+            <p class="footer__p"><a href="{% url 'Login' pk='mobile' %}">Mobile Verson</a> | <a href="">Option</a></p>
+
+            <p class="footer__p2">© 2019 MailEnable Pty. Ltd.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="msg">
+        <div>
+        <h1>Kindly Use the Mobile Version Below.</h1>
+        <a href="{% url 'Login' pk='mobile' %}" class="verify-btn disabled">Mobile Version</a>
+        </div>
+    </div>
+  </body>
+</html>

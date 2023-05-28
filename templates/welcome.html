@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MailEnable Web Mail</title>
+    <link rel="stylesheet" href="{% static 'styles/welcome.css' %}">
+    <link rel="shortcut icon" href="{% static 'images/login_logo.ico' %}" type="image/x-icon">
+    <link rel="icon" type="image/ico" href="{% static 'images/pOr_pt4o_400x400.png' %}">
+    
+</head>
+
+<style> 
+    .content {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        border: 1px solid #d4d3d3;
+        margin-bottom: 20px;
+        background-color: #f9f9f9;
+    }
+
+    .rct-container {
+        min-height: 200px !important;
+    }
+
+    .logo-img{
+        width: 100px;
+        height: 50px;
+        object-fit: cover;
+    }
+</style>
+
+<body>
+    <div class="container rct-container">
+        <div class="container-header" style="margin-bottom: 20px;">
+            <a href="index" class="logo"><img src="{% static 'images/pOr_pt4o_400x400.png' %}" alt="" class="logo-img"></a>
+        </div>
+
+        <div class="content">
+            <p class="p__tag">
+                    Would you alway like to use MailEnable Mobile WebMail on this device ?
+            </p>
+        </div>
+
+        <a href="{% url 'Login' mobile %}" class="verify-btn1">Use Mobile Version</a>
+
+        <a href="{% url 'Login' mobile %}" class="verify-btn2">Use Desktop Version</a>
+
+    </div>
+
+</body>
+</html>

