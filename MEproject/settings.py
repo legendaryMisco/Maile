@@ -31,7 +31,7 @@ environ.Env.read_env()
 SECRET_KEY = env('SECRET_KEY')
 DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = ['192.168.43.97']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
