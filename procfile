@@ -1,1 +1,0 @@
-web: gunicorn MEproject.wsgi --log-file -
